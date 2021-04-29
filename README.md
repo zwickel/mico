@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/UST-MICO/mico.svg?branch=master)](https://travis-ci.org/UST-MICO/mico)
 
-# Zwickel-MICO
+# MICO
 
 > A Management System for Microservice Compositions
 
@@ -16,15 +16,16 @@ If you use GKE, please note that you must grant the user the ability to create r
 This is a prerequisite to use use role-based access control on GKE. For more information see the GKE [instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
 
 Grant permission for the current user (GKE only):
+
 ```bash
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole cluster-admin --user $(gcloud config list account --format "value(core.account)")
 ```
 
 **Requirements:**
 
-- Kubernetes cluster version must be v1.11 or newer
-- [`kubectl` CLI tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/) with version v1.10 or newer
-- DockerHub account (required to store Docker images of services that are build by MICO)
+-   Kubernetes cluster version must be v1.11 or newer
+-   [`kubectl` CLI tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/) with version v1.10 or newer
+-   DockerHub account (required to store Docker images of services that are build by MICO)
 
 Configure `kubectl` to use the cluster in the current context.
 
@@ -70,16 +71,16 @@ kubectl delete -f install/kubernetes/
 
 ## Tutorials
 
-- [Tutorial Overview](https://mico-docs.readthedocs.io/en/latest/tutorials/index.html)
-- [How To add a service](https://mico-docs.readthedocs.io/en/latest/tutorials/01-add-a-service.html)
-- [How To manager a service](https://mico-docs.readthedocs.io/en/latest/tutorials/02-manage-service.html)
-- [How To add an application](https://mico-docs.readthedocs.io/en/latest/tutorials/03-add-an-application.html)
-- [How to manage an application](https://mico-docs.readthedocs.io/en/latest/tutorials/04-manage-an-application.html)
+-   [Tutorial Overview](https://mico-docs.readthedocs.io/en/latest/tutorials/index.html)
+-   [How To add a service](https://mico-docs.readthedocs.io/en/latest/tutorials/01-add-a-service.html)
+-   [How To manager a service](https://mico-docs.readthedocs.io/en/latest/tutorials/02-manage-service.html)
+-   [How To add an application](https://mico-docs.readthedocs.io/en/latest/tutorials/03-add-an-application.html)
+-   [How to manage an application](https://mico-docs.readthedocs.io/en/latest/tutorials/04-manage-an-application.html)
 
 ## Documentation
 
-- [USERS](https://mico-docs.readthedocs.io)
-- [CONTRIBUTORS](https://mico-dev.readthedocs.io)
+-   [USERS](https://mico-docs.readthedocs.io)
+-   [CONTRIBUTORS](https://mico-dev.readthedocs.io)
 
 ## Update Source File Headers
 

@@ -1353,6 +1353,14 @@ export class AppDependencyGraphComponent implements OnInit, OnChanges, OnDestroy
                 existing.data.patternIconURL = "./assets/EIP-icons/message-filter.svg";
             } else if (existing.data.openFaaSFunctionName && existing.data.openFaaSFunctionName.includes('router')) {
                 existing.data.patternIconURL = "./assets/EIP-icons/content-based-router.svg";
+            } else if (existing.data.openFaaSFunctionName && existing.data.openFaaSFunctionName.includes('wire-tap')) {
+                existing.data.patternIconURL = "./assets/EIP-icons/wire-tap.svg";
+            } else if (existing.data.openFaaSFunctionName && existing.data.openFaaSFunctionName.includes('detour')) {
+                existing.data.patternIconURL = "./assets/EIP-icons/detour.svg";
+            } else if (existing.data.openFaaSFunctionName && existing.data.openFaaSFunctionName.includes('smart-proxy')) {
+                existing.data.patternIconURL = "./assets/EIP-icons/smart-proxy.svg";
+            } else if (existing.data.openFaaSFunctionName && existing.data.openFaaSFunctionName.includes('channel-purger')) {
+                existing.data.patternIconURL = "./assets/EIP-icons/channel-purger.svg";
             } else {
                 existing.data.patternIconURL = "";
             }

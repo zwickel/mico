@@ -77,6 +77,7 @@ import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { CreateServiceDialogComponent } from './dialogs/create-service/create-service.component';
 import { ChangeServiceVersionComponent } from './dialogs/change-service-version/change-service-version.component';
+import { TopicOptionsComponent } from './dialogs/topic-options/topic-options.component';
 import { ServicePickerComponent } from './dialogs/service-picker/service-picker.component';
 import { YesNoDialogComponent } from './dialogs/yes-no-dialog/yes-no-dialog.component';
 import { CreateServiceInterfaceComponent } from './dialogs/create-service-interface/create-service-interface.component';
@@ -122,6 +123,7 @@ import { GraphUpdateFaasFunctionComponent } from './dialogs/graph-update-faas-fu
         ServiceDetailComponent,
         CreateServiceDialogComponent,
         ChangeServiceVersionComponent,
+        TopicOptionsComponent,
         ServicePickerComponent,
         YesNoDialogComponent,
         CreateServiceInterfaceComponent,
@@ -150,6 +152,7 @@ import { GraphUpdateFaasFunctionComponent } from './dialogs/graph-update-faas-fu
         // dialogs
         CreateServiceDialogComponent,
         ChangeServiceVersionComponent,
+        TopicOptionsComponent,
         ServicePickerComponent,
         YesNoDialogComponent,
         CreateServiceInterfaceComponent,

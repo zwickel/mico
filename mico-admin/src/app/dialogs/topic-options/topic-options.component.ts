@@ -42,7 +42,7 @@ export class TopicOptionsComponent implements OnInit {
     constructor(
         public dialogRef: MatDialogRef<TopicOptionsComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any,
-        // private apiService: ApiService,
+        private apiService: ApiService,
     ) {
         this.topicName = data.service.topicName;
     }
@@ -66,10 +66,12 @@ export class TopicOptionsComponent implements OnInit {
         // });
     }
 
-    purgeChannel() { console.log("purging it out now!!!"); }
+    purgeChannel() {
+        this.apiService.purgeTopic(this.topicName);
+    }
 
     confirm() {
-        return;//this.selected;
+        return;
     }
 
 }

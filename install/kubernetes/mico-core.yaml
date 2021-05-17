@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: mico-core
-          image: ustmico/mico-core
+          image: zwickel/mico-core:v15
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

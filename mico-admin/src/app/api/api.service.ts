@@ -1151,6 +1151,19 @@ export class ApiService {
         );
     }
 
+    purgeTopic(topicName: string) {
+        this.snackBar.open(`Purge for topic ${topicName} initialized`, 'Ok', { duration: 5000, });
+        const resource = `/topics/purge/${topicName}`;
+
+        this.rest.get<ApiObject>(resource).subscribe(val => {
+            if (val.purged == "true") {
+                this.snackBar.open(`Topic ${topicName} purged.`, 'Ok', {
+                    duration: 4000,
+                });
+            }
+        });
+    }
+
 
     // =========
     // OPEN FAAS
@@ -1264,8 +1277,8 @@ export class ApiService {
 
                 this.snackBar.open('Application deployment finished: ' +
                     applicationShortName + ' ' + applicationVersion, 'Ok', {
-                        duration: 4000,
-                    });
+                    duration: 4000,
+                });
 
                 cleanUp();
                 stream.next(newStatus);
@@ -1273,8 +1286,8 @@ export class ApiService {
             } else if (newStatus.status === 'ERROR') {
                 this.snackBar.open('Application deployment failed: ' +
                     applicationShortName + ' ' + applicationVersion, 'Ok', {
-                        duration: 8000,
-                    });
+                    duration: 8000,
+                });
 
                 cleanUp();
                 stream.next(newStatus);

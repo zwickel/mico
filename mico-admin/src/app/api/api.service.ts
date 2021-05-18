@@ -1164,6 +1164,17 @@ export class ApiService {
         });
     }
 
+    switchDetour(detourStatus: string) {
+        const resource = `/detour/${detourStatus}`;
+        this.rest.get<ApiObject>(resource).subscribe(val => {
+            if (val.detourStatus == "changed") {
+                this.snackBar.open(`Detour status: ${detourStatus}.`, 'Ok', {
+                    duration: 4000,
+                });
+            }
+        });
+    }
+
 
     // =========
     // OPEN FAAS

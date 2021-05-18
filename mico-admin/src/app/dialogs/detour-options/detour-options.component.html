@@ -1,0 +1,12 @@
+<mat-dialog-content style="overflow: visible; min-width: 48rem">
+    <h2>Detour</h2>
+    <p>Set Detour:</p>
+    <button mat-stroked-button title="detour on" (click)="detourOn()">Detour on</button>
+    <button mat-stroked-button title="detour off" (click)="detourOff()">Detour off</button>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <!-- <button mat-button [mat-dialog-close]="confirm()">Confirm</button> -->
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

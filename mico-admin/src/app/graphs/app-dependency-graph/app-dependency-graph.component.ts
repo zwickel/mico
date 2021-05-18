@@ -31,6 +31,7 @@ import {
 import { MatDialog } from '@angular/material';
 import { ChangeServiceVersionComponent } from 'src/app/dialogs/change-service-version/change-service-version.component';
 import { TopicOptionsComponent } from 'src/app/dialogs/topic-options/topic-options.component';
+import { DetourOptionsComponent } from 'src/app/dialogs/detour-options/detour-options.component';
 import { debounceTime, take, takeLast } from 'rxjs/operators';
 import { safeUnsubscribe, safeUnsubscribeList } from 'src/app/util/utils';
 import { YesNoDialogComponent } from 'src/app/dialogs/yes-no-dialog/yes-no-dialog.component';
@@ -234,6 +235,11 @@ export class AppDependencyGraphComponent implements OnInit, OnChanges, OnDestroy
         if (event.detail.node.type === 'kafka-topic') {
             event.preventDefault();
             const dialogRef = this.dialog.open(TopicOptionsComponent, { data: { service: event.detail.node.data } });
+            return;
+        }
+        if (event.detail.node.title === 'detour') {
+            event.preventDefault();
+            const dialogRef = this.dialog.open(DetourOptionsComponent, { data: { service: event.detail.node.data } });
             return;
         }
         if (event.detail.key === 'version') {  // user clicked on service version

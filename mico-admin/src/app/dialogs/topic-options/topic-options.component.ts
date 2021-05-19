@@ -17,14 +17,9 @@
  * under the License.
  */
 
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource } from '@angular/material';
-import { incrementVersion, versionComponents, versionComparator } from 'src/app/api/semantic-version';
-import { ApiObject } from 'src/app/api/apiobject';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ApiService } from 'src/app/api/api.service';
-import { take } from 'rxjs/operators';
-import { SelectionModel } from '@angular/cdk/collections';
-import { selection } from 'd3';
 
 @Component({
     selector: 'mico-topic-options',
@@ -34,10 +29,6 @@ import { selection } from 'd3';
 export class TopicOptionsComponent implements OnInit {
 
     topicName: string;
-    // versions: ApiObject[];
-    // dataSource: MatTableDataSource<ApiObject>;
-    // selection: SelectionModel<ApiObject>;
-    // selected: ApiObject;
 
     constructor(
         public dialogRef: MatDialogRef<TopicOptionsComponent>,
@@ -47,24 +38,7 @@ export class TopicOptionsComponent implements OnInit {
         this.topicName = data.service.topicName;
     }
 
-    ngOnInit() {
-        // this.apiService.getServiceVersions(this.service.shortName).pipe(take(2)).subscribe(versions => {
-        //     this.versions = JSON.parse(JSON.stringify(versions)).sort((n1, n2) => versionComparator(n1.version, n2.version));
-        //     this.dataSource = new MatTableDataSource(this.versions);
-        //     this.selection = new SelectionModel<ApiObject>(false, []);
-        //     this.selection.changed.subscribe(change => {
-        //         const selected = this.selection.selected;
-        //         if (selected.length > 0) {
-        //             this.selected = selected[0];
-        //         } else {
-        //             this.selected = null;
-        //         }
-        //     });
-        //     if (this.selected == null) {
-        //         this.selection.select(this.service);
-        //     }
-        // });
-    }
+    ngOnInit() { }
 
     purgeChannel() {
         this.apiService.purgeTopic(this.topicName);

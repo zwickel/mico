@@ -1151,6 +1151,10 @@ export class ApiService {
         );
     }
 
+    /**
+     * Purge the selected topic with topicName.
+     * @param topicName the topic to purge
+     */
     purgeTopic(topicName: string) {
         this.snackBar.open(`Purge for topic ${topicName} initialized`, 'Ok', { duration: 5000, });
         const resource = `/topics/purge/${topicName}`;
@@ -1164,6 +1168,10 @@ export class ApiService {
         });
     }
 
+    /**
+     * Call the backend api to set the detour status on or off. The value of 'detour:status' inside the redis store is changed that way.
+     * @param detourStatus the value to set the status on "on" or "off"
+     */
     switchDetour(detourStatus: string) {
         const resource = `/detour/${detourStatus}`;
         this.rest.get<ApiObject>(resource).subscribe(val => {

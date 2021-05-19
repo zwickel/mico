@@ -17,14 +17,9 @@
  * under the License.
  */
 
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource } from '@angular/material';
-import { incrementVersion, versionComponents, versionComparator } from 'src/app/api/semantic-version';
-import { ApiObject } from 'src/app/api/apiobject';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ApiService } from 'src/app/api/api.service';
-import { take } from 'rxjs/operators';
-import { SelectionModel } from '@angular/cdk/collections';
-import { selection } from 'd3';
 
 @Component({
     selector: 'mico-detour-options',

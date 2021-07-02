@@ -68,6 +68,6 @@ spec:
             httpGet:
               path: /actuator/health
               port: 5000
-            initialDelaySeconds: 15
-            periodSeconds: 3
+            initialDelaySeconds: 30
+            periodSeconds: 10
             failureThreshold: 3
